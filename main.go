@@ -66,7 +66,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	// example usage: curl -s 'http://localhost:80/?url=http://go-colly.org/'
 	addr := ":80"
 
 	http.HandleFunc("/", handler)
