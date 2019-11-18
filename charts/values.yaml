@@ -1,4 +1,4 @@
-# Default values for charts2.
+# Default values for charts.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -34,8 +34,9 @@ securityContext:
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
+  type: LoadBalancer
   port: 80
+  nodePort: 32000
 
 ingress:
   enabled: false

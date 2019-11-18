@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "charts2.fullname" . }}
+  name: {{ include "charts.fullname" . }}
   labels:
-{{ include "charts2.labels" . | indent 4 }}
+{{ include "charts.labels" . | indent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: {{ .Values.service.port }}
       protocol: TCP
       name: http
   selector:
-    app.kubernetes.io/name: {{ include "charts2.name" . }}
+    app.kubernetes.io/name: {{ include "charts.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
